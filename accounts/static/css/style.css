@@ -1,0 +1,387 @@
+
+/* ==========================================
+   1. GENERAL SETTINGS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #03052d;
+    --primary-blue: #063ba0;
+    --neon-blue: #087cff;
+    --light-blue: #8deaff;
+    --cyan: #83eaff;
+    --input-blue: #a9c9e8;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: var(--dark-blue);
+    color: var(--white);
+}
+
+
+/* ==========================================
+   2. BACKGROUND IMAGE
+========================================== */
+
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    /* Your PNG Background */
+    background-image:
+        linear-gradient(
+            rgba(2, 3, 35, 0.10),
+            rgba(2, 3, 35, 0.10)
+        ),
+        url("../images/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* ==========================================
+   3. GLASSMORPHISM CARD
+========================================== */
+
+.auth-card {
+    position: relative;
+    z-index: 2;
+
+    background: rgba(14, 17, 62, 0.48);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1.5px solid var(--cyan);
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 20px rgba(0, 174, 255, 0.12),
+        inset 0 0 20px rgba(255, 255, 255, 0.04);
+
+    text-align: center;
+
+    transition: box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    box-shadow:
+        0 0 30px rgba(0, 174, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+
+/* ==========================================
+   4. LOGIN CARD
+========================================== */
+
+.login-card {
+    width: 100%;
+    max-width: 345px;
+    min-height: 470px;
+
+    padding: 38px 35px 28px;
+}
+
+.auth-card h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--light-blue);
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--light-blue);
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   5. FORM FIELDS
+========================================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--light-blue);
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 35px;
+
+    padding: 8px 12px;
+
+    background: var(--input-blue);
+    color: #061b4d;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    background: #d6ecff;
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 8px rgba(0, 220, 255, 0.7);
+}
+
+.form-group input::placeholder {
+    color: #58708b;
+}
+
+
+/* ==========================================
+   6. FORGOT PASSWORD
+========================================== */
+
+.forgot-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: -16px;
+    margin-bottom: 20px;
+}
+
+.forgot-link {
+    color: var(--light-blue);
+    font-size: 9px;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   7. AUTH BUTTON
+========================================== */
+
+.auth-button {
+    width: 112px;
+    height: 36px;
+
+    border: none;
+    border-radius: 3px;
+
+    background: var(--primary-blue);
+    color: white;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    background: #0758e5;
+
+    box-shadow:
+        0 0 15px rgba(0, 174, 255, 0.65);
+
+    transform: translateY(-2px);
+}
+
+.auth-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ==========================================
+   8. DIVIDER
+========================================== */
+
+.divider {
+    width: 45px;
+    height: 3px;
+
+    background: var(--cyan);
+    border-radius: 10px;
+
+    margin: 15px auto 27px;
+
+    box-shadow:
+        0 0 10px rgba(0, 220, 255, 0.6);
+}
+
+
+/* ==========================================
+   9. BOTTOM CONTENT
+========================================== */
+
+.bottom-content h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bottom-content h3 a {
+    color: var(--light-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.bottom-content h3 a:hover {
+    color: white;
+}
+
+.bottom-content p {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   10. REGISTER CARD
+========================================== */
+
+.register-card {
+    width: 100%;
+    max-width: 520px;
+    min-height: 470px;
+
+    padding: 22px 38px 25px;
+}
+
+.register-card .subtitle {
+    margin-bottom: 32px;
+}
+
+
+/* Two-column form */
+
+.register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+.register-card .form-group {
+    margin-bottom: 22px;
+}
+
+.register-card .form-group input {
+    height: 35px;
+}
+
+
+/* Centered email field */
+
+.email-group {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.email-group .form-group {
+    margin-bottom: 15px;
+}
+
+
+/* Register divider */
+
+.register-card .divider {
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+
+/* ==========================================
+   11. RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 600px) {
+
+    .auth-page {
+        padding: 25px 15px;
+        background-attachment: scroll;
+    }
+
+    .login-card {
+        max-width: 380px;
+        padding: 35px 28px;
+    }
+
+    .register-card {
+        max-width: 420px;
+        padding: 30px 22px;
+    }
+
+    .register-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .email-group {
+        width: 100%;
+    }
+
+    .register-card .subtitle {
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .auth-card h1 {
+        font-size: 19px;
+    }
+
+    .login-card,
+    .register-card {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .bottom-content h3 {
+        font-size: 12px;
+    }
+
+}
